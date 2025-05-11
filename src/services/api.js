@@ -56,14 +56,14 @@ export const searchMovies = async (title = '', year = '', page = 1) => {
 // Get movie details endpoint
 export const getMovieDetails = async (imdbID) => {
   // use root /data/{imdbID}
-  const response = await fetch(`${API_BASE_URL}/data/${imdbID}`);
+  const response = await fetch(`${API_BASE_URL}/movies/data/${imdbID}`);
   return handleResponse(response);
 };
 
 // Get person details endpoint
 export const getPersonDetails = async (personId) => {
-  // use root /data/person/{personId} format following the pattern of getMovieDetails
-  return fetchWithAuth(`${API_BASE_URL}/data/person/${personId}`);
+  // use root /data/people/{personId} format following the pattern of getMovieDetails
+  return fetchWithAuth(`${API_BASE_URL}/people/${personId}`);
 };
 
 // Register user endpoint
@@ -96,7 +96,7 @@ export const refreshToken = async () => {
   }
   try {
     // use root /refresh
-    const response = await fetch(`${API_BASE_URL}/refresh`, {
+    const response = await fetch(`${API_BASE_URL}/user/refresh`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ refreshToken: currentRefreshToken }),
