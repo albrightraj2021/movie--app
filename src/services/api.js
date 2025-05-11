@@ -42,20 +42,14 @@ const fetchWithAuth = async (url, options = {}) => {
   return handleResponse(response);
 };
 
-// Store the token
-localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyaXNoYWdyYWZkYW5pZWxAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTQwNzE4LCJpYXQiOjE3NDY5NDAxMTh9.x-digYLb2Hy71exRrfbiCAOmGx6pbi3Sh4qqon8w5d0');
-
-// fetchWithAuth (or any fetch) will include it automatically:
-fetchWithAuth(`${API_BASE_URL}/some-endpoint`);
-
 // Search movies endpoint
 export const searchMovies = async (title = '', year = '', page = 1) => {
   let query = `page=${page}`;
   if (title) query += `&title=${encodeURIComponent(title)}`;
   if (year) query += `&year=${year}`;
   
-  // use root /search
-  const response = await fetch(`${API_BASE_URL}/search?${query}`);
+  // use correct endpoint: /movies/search
+  const response = await fetch(`${API_BASE_URL}/movies/search?${query}`);
   return handleResponse(response);
 };
 
@@ -68,8 +62,8 @@ export const getMovieDetails = async (imdbID) => {
 
 // Get person details endpoint
 export const getPersonDetails = async (personId) => {
-  // assume root /people/json?id=
-  return fetchWithAuth(`${API_BASE_URL}/people/json?id=${personId}`);
+  // use root /data/person/{personId} format following the pattern of getMovieDetails
+  return fetchWithAuth(`${API_BASE_URL}/data/person/${personId}`);
 };
 
 // Register user endpoint
