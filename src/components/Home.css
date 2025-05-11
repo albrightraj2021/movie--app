@@ -1,0 +1,70 @@
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-header h1 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hero-section {
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+.hero-section h2 {
+  font-size: 1.5em;
+  color: #555;
+  font-weight: normal;
+}
+
+.cta-section {
+  margin-top: 20px;
+}
+
+.cta-section p {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  color: white; /* Ensure text color remains white on hover */
+}
+
+/* Dark mode adjustments for Home.css */
+@media (prefers-color-scheme: dark) {
+  .home-header h1 {
+    color: #e0e0e0;
+  }
+  .hero-section h2 {
+    color: #bbb;
+  }
+  .cta-section p {
+    color: #ccc;
+  }
+  .hero-image {
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+  }
+}
