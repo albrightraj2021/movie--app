@@ -69,7 +69,7 @@ export const getPersonDetails = async (personId) => {
 // Register user endpoint
 export const registerUser = async (email, password) => {
   // use root /register
-  const response = await fetch(`${API_BASE_URL}/register`, {
+  const response = await fetch(`${API_BASE_URL}/user/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
@@ -80,7 +80,7 @@ export const registerUser = async (email, password) => {
 // Login user endpoint
 export const loginUser = async (email, password, longExpiry = false) => {
   // use root /login
-  const response = await fetch(`${API_BASE_URL}/login`, {
+  const response = await fetch(`${API_BASE_URL}/user/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password, longExpiry }),

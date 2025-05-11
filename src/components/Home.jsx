@@ -10,7 +10,7 @@ const Home = () => {
       </header>
       <section className="hero-section">
         <img 
-          src="https://via.placeholder.com/800x400?text=Old+Fashioned+Film+Projector" 
+          src="https://placehold.co/600x400?text=MoiveGo" 
           alt="Old fashioned film projector" 
           className="hero-image"
         />
